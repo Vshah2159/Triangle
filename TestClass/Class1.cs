@@ -149,5 +149,97 @@ namespace TestClass
             // Assert
             ClassicAssert.AreEqual("A scalene triangle is formed", result);
         }
+
+        // Zero Length For One or More Side Tests
+        [Test]
+        public void AnalyzeTriangle_ZeroLengthSide_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 0;
+            int side2 = 4;
+            int side3 = 5;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("At least one side entered had a zero - invalid triangle", result);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_ZeroLengthSide2_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 3;
+            int side2 = 0;
+            int side3 = 6;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("At least one side entered had a zero - invalid triangle", result);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_ZeroLengthSide3_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 4;
+            int side2 = 5;
+            int side3 = 0;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("At least one side entered had a zero - invalid triangle", result);
+        }
+
+        // Invalid Response Tests
+        [Test]
+        public void AnalyzeTriangle_InvalidResponse1_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 1;
+            int side2 = 1;
+            int side3 = 10;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("A triangle cannot be formed", result);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_InvalidResponse2_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 2;
+            int side2 = 3;
+            int side3 = 10;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("A triangle cannot be formed", result);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_InvalidResponse3_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 7;
+            int side2 = 2;
+            int side3 = 5;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual("A triangle cannot be formed", result);
+        }
     }
 }
