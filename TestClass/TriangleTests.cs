@@ -7,9 +7,9 @@ using TriangleSolver;
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 
-namespace TestClass
+namespace TestTriangle
 {
-    public class Class1
+    public class TriangleTests
     {
 
         // Valid Equilateral Triangle Test
